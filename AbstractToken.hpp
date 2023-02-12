@@ -2,8 +2,8 @@
 
 #include <stack>
 
-class INode {
+class AbstractToken {
  public:
   virtual void Act(std::stack<double>& s) const = 0;
-  virtual ~INode() = default;
+  virtual ~AbstractToken() = default;
 };

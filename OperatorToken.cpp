@@ -1,8 +1,8 @@
-#include "operator_node.hpp"
+#include "OperatorToken.hpp"
 
 #include <iostream>
 
-void OperatorNode::Act(std::stack<double> &s) const {
+void OperatorToken::Act(std::stack<double> &s) const {
   std::vector<double> args{};
   for (int i = 0; i < operation_->GetArity(); i++) {
     // TODO: check stack. If it's empty - throw exception.
@@ -13,7 +13,6 @@ void OperatorNode::Act(std::stack<double> &s) const {
   s.push(res);
 }
 
-OperatorNode::OperatorNode(IOperation *operation) : operation_(operation) {}
-OperatorNode::~OperatorNode() {
-  std::cout << "~OperatorNode" << std::endl;
+OperatorToken::OperatorToken(OperationToken *operation) : operation_(operation) {}
+OperatorToken::~OperatorToken() {
 }

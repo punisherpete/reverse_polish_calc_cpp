@@ -1,11 +1,11 @@
 #pragma once
 
-#include "i_operation.hpp"
+#include "OperationToken.hpp"
 
-class AddOp : public IOperation {
+class AdditionToken : public OperationToken {
  public:
   std::string GetName() const override;
   double Apply(const std::vector<double> &args) const override;
   unsigned int GetArity() const override;
-  virtual ~AddOp();
+  virtual ~AdditionToken();
 };
